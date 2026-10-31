@@ -1,0 +1,18 @@
+# dsh-prompt-snippets — this bundle's configuration layer.
+#
+# `dsh plugin add` appends the package to the profile's `dsh.profile.bundles`;
+# the launcher applies this patch when the profile boots. The row below mounts
+# this package's host half and its browser bundle.
+#
+# Optional: give the row a `config.root` to enable project libraries. The root
+# is a directory whose first-level folders (or the root itself) may contain a
+# `.dsh-prompts/` directory; each one becomes a group. The global library in
+# $DSH_HOME/prompts works without any configuration.
+# - insert:
+#     - id: dsh-prompt-snippets
+#       name: dsh-prompt-snippets
+#       config:
+#         root: /absolute/path/to/your/projects
+- insert:
+    - id: dsh-prompt-snippets
+      name: dsh-prompt-snippets

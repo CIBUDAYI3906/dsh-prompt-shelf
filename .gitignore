@@ -1,0 +1,7 @@
+node_modules/
+*.tgz
+.pubtest/
+.DS_Store
+verify/shots/
+verify/out/
+.npm-cache/

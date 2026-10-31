@@ -1,0 +1,76 @@
+{
+  "name": "dsh-prompt-snippets",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "常用提示词库：把反复要说的背景、偏好存成 Markdown，点一下或 @ 追加进输入框",
+  "license": "MIT",
+  "homepage": "https://github.com/CIBUDAYI3906/dsh-prompt-snippets#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CIBUDAYI3906/dsh-prompt-snippets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CIBUDAYI3906/dsh-prompt-snippets/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "prompt",
+    "prompt-library",
+    "web",
+    "composer"
+  ],
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "icon.png",
+    "examples"
+  ],
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.0-rc.1 <0.3.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/schemastery": "^3.18.1"
+  },
+  "devDependencies": {
+    "@deepseek-ai/schemastery": "^3.18.1",
+    "esbuild": "^0.25.0",
+    "playwright-core": "^1.61.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "verify": "node verify/bundle-load.mjs && node verify/host-routes.mjs",
+    "e2e": "node verify/e2e.mjs",
+    "pack": "npm pack --dry-run",
+    "preflight": "node scripts/preflight.mjs",
+    "owner": "node scripts/set-owner.mjs",
+    "prepublishOnly": "node scripts/preflight.mjs"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-primitives",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}
