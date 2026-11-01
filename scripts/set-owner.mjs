@@ -28,15 +28,15 @@ function rewrite(file) {
   writeFileSync(path, text.split('OWNER').join(owner))
 }
 
-for (const file of ['package.json', 'README.md', 'PUBLISH.md', 'submission/OWNER__dsh-prompt-snippets.yml']) {
+for (const file of ['package.json', 'README.md', 'PUBLISH.md', 'submission/OWNER__dsh-prompt-shelf.yml']) {
   rewrite(file)
 }
 
-const submission = join(pkgDir, 'submission', 'OWNER__dsh-prompt-snippets.yml')
-if (readdirSync(join(pkgDir, 'submission')).includes('OWNER__dsh-prompt-snippets.yml')) {
-  renameSync(submission, join(pkgDir, 'submission', owner + '__dsh-prompt-snippets.yml'))
+const submission = join(pkgDir, 'submission', 'OWNER__dsh-prompt-shelf.yml')
+if (readdirSync(join(pkgDir, 'submission')).includes('OWNER__dsh-prompt-shelf.yml')) {
+  renameSync(submission, join(pkgDir, 'submission', owner + '__dsh-prompt-shelf.yml'))
 }
 
 console.log('owner set to ' + owner + '. next:')
-console.log('  git init -b main && git add . && git commit -m "dsh-prompt-snippets 0.1.0"')
-console.log('  git remote add origin git@github.com:' + owner + '/dsh-prompt-snippets.git && git push -u origin main')
+console.log('  git init -b main && git add . && git commit -m "dsh-prompt-shelf 0.1.0"')
+console.log('  git remote add origin git@github.com:' + owner + '/dsh-prompt-shelf.git && git push -u origin main')

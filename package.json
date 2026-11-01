@@ -1,16 +1,16 @@
 {
-  "name": "dsh-prompt-snippets",
+  "name": "dsh-prompt-shelf",
   "version": "0.1.0",
   "type": "module",
   "description": "常用提示词库：把反复要说的背景、偏好存成 Markdown，点一下或 @ 追加进输入框",
   "license": "MIT",
-  "homepage": "https://github.com/CIBUDAYI3906/dsh-prompt-snippets#readme",
+  "homepage": "https://github.com/CIBUDAYI3906/dsh-prompt-shelf#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CIBUDAYI3906/dsh-prompt-snippets.git"
+    "url": "git+https://github.com/CIBUDAYI3906/dsh-prompt-shelf.git"
   },
   "bugs": {
-    "url": "https://github.com/CIBUDAYI3906/dsh-prompt-snippets/issues"
+    "url": "https://github.com/CIBUDAYI3906/dsh-prompt-shelf/issues"
   },
   "keywords": [
     "dsh",

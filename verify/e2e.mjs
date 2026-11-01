@@ -71,15 +71,19 @@ try {
 
   /** Dismiss whatever first-run sheet is up until the composer is usable. */
   async function settle() {
-    for (let attempt = 0; attempt < 20; attempt++) {
+    for (let attempt = 0; attempt < 30; attempt++) {
       for (const name of ['稍后配置', '继续', '我知道了']) {
         const button = page.getByRole('button', { name, exact: true })
         if (await button.count()) {
           await button.first().click({ timeout: 2000 }).catch(() => {})
-          await page.waitForTimeout(400)
+          await page.waitForTimeout(600)
         }
       }
-      if (await trigger.count()) return true
+      // The trigger exists behind the setup sheet too, so "present" is not
+      // "usable": wait until the dismissing buttons are actually gone.
+      const blocking = (await page.getByRole('button', { name: '稍后配置', exact: true }).count())
+        + (await page.getByRole('button', { name: '继续', exact: true }).count())
+      if (blocking === 0 && await trigger.count()) return true
       await page.waitForTimeout(400)
     }
     return false
